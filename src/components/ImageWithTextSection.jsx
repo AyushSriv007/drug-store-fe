@@ -58,7 +58,7 @@ const ImageWithTextSection = () => {
             </div>
           </div>
           <div className="image__width--text__thumbnail thumbnail2">
-            <img src="assets/img/banner/banner2.webp" alt="image" />
+            <img src="assets/img/banner/banner2.png" alt="image" />
           </div>
         </div>
       </div>

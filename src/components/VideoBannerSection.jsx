@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const VideoBannerSection = () => {
   return (
     <section className="video__banner--section position-relative section--padding pb-0">
-      <img className="video__banner--section__thumbnail" src="assets/img/banner/banner-fullwidth1.webp" alt="img" />
+      <img className="video__banner--section__thumbnail" style={{width: '100%'}} src="assets/img/banner/banner-fullwidth10.png" alt="img" />
       <div className="video__banner--wrapper">
         <div className="container">
           <div className="video__banner--inner d-flex align-items-end">

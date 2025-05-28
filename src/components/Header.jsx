@@ -42,13 +42,13 @@ const Header = () => {
                       </svg>
                     </Link>
                     <ul className="header__sub--menu">
-                      <li className="header__sub--menu__items"><Link to="/">Home - Beauty Cosmetic</Link></li>
-                      <li className="header__sub--menu__items"><Link to="/index-2">Home - Cosmetic Spa</Link></li>
-                      <li className="header__sub--menu__items"><Link to="/index-3">Home - Jewelry Store</Link></li>
-                      <li className="header__sub--menu__items"><Link to="/index-4">Home - Modern Jewelry</Link></li>
-                      <li className="header__sub--menu__items"><Link to="/index-5">Home - Look book</Link></li>
-                      <li className="header__sub--menu__items"><Link to="/index-6">Home - Beauty Jewelers</Link></li>
-                      <li className="header__sub--menu__items"><Link to="/index-7">Home - Parallax</Link></li>
+                      <li className="header__sub--menu__items"><Link to="/" className="header__sub--menu__link">Home - Beauty Cosmetic</Link></li>
+                      <li className="header__sub--menu__items"><Link to="/index-2" className="header__sub--menu__link">Home - Cosmetic Spa</Link></li>
+                      <li className="header__sub--menu__items"><Link to="/index-3" className="header__sub--menu__link">Home - Jewelry Store</Link></li>
+                      <li className="header__sub--menu__items"><Link to="/index-4" className="header__sub--menu__link">Home - Modern Jewelry</Link></li>
+                      <li className="header__sub--menu__items"><Link to="/index-5" className="header__sub--menu__link">Home - Look book</Link></li>
+                      <li className="header__sub--menu__items"><Link to="/index-6" className="header__sub--menu__link">Home - Beauty Jewelers</Link></li>
+                      <li className="header__sub--menu__items"><Link to="/index-7" className="header__sub--menu__link">Home - Parallax</Link></li>
                     </ul>
                   </li>
 
@@ -61,7 +61,7 @@ const Header = () => {
                     </Link>
                     <div className="header__mega--menu__wrapper">
                       <ul className="header__mega--menu d-flex">
-                        <li className="header__sub--menu__items"><Link to="/index-3">Shop 1</Link></li>
+                        <li className="header__sub--menu__items"><Link className="header__sub--menu__link" to="/index-3">Shop 1</Link></li>
                       </ul>
                     </div>
                   </li>
@@ -78,14 +78,14 @@ const Header = () => {
                       </svg>
                     </Link>
                     <ul className="header__sub--menu">
-                      <li className="header__sub--menu__items"><Link to="/about">About Us</Link></li>
-                      <li className="header__sub--menu__items"><Link to="/contact">Contact Us</Link></li>
-                      <li className="header__sub--menu__items"><Link to="/cart">Cart Page</Link></li>
-                      <li className="header__sub--menu__items"><Link to="/portfolio">Portfolio Page</Link></li>
-                      <li className="header__sub--menu__items"><Link to="/wishlist">Wishlist Page</Link></li>
-                      <li className="header__sub--menu__items"><Link to="/privacy-policy">Privacy Policy</Link></li>
-                      <li className="header__sub--menu__items"><Link to="/login">Login Page</Link></li>
-                      <li className="header__sub--menu__items"><Link to="/404">Error Page</Link></li>
+                      <li className="header__sub--menu__items"><Link className="header__sub--menu__link" to="/about">About Us</Link></li>
+                      <li className="header__sub--menu__items"><Link className="header__sub--menu__link" to="/contact">Contact Us</Link></li>
+                      <li className="header__sub--menu__items"><Link className="header__sub--menu__link" to="/cart">Cart Page</Link></li>
+                      <li className="header__sub--menu__items"><Link className="header__sub--menu__link" to="/portfolio">Portfolio Page</Link></li>
+                      <li className="header__sub--menu__items"><Link className="header__sub--menu__link" to="/wishlist">Wishlist Page</Link></li>
+                      <li className="header__sub--menu__items"><Link className="header__sub--menu__link" to="/privacy-policy">Privacy Policy</Link></li>
+                      <li className="header__sub--menu__items"><Link className="header__sub--menu__link" to="/login">Login Page</Link></li>
+                      <li className="header__sub--menu__items"><Link className="header__sub--menu__link" to="/404">Error Page</Link></li>
                     </ul>
                   </li>
 

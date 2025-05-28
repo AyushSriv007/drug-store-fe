@@ -2952,7 +2952,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .hero__slider--items {
-    background: url(../img/slider/home1-slider1-bg.webp);
+    background: url(../img/slider/home1-slider1-bg.avif);
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
@@ -13513,7 +13513,7 @@ figure {
 }
 
 #divisor {
-    background-image: url(../img/banner/banner4.webp);
+    background-image: url(../img/banner/banner35.png);
     background-size: cover;
     position: absolute;
     width: 50%;
