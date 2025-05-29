@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import About from './components/about/About';
 import Login from './components/auth/login/Login';
 import Cart from './components/cart/Cart';
@@ -9,8 +9,22 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import HomePage from './components/HomePage';
 import Shop from './components/shop/Shop';
+import ProductDetails from './components/shop/product-details/ProductDetails';
+import { useEffect } from 'react';
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.__themeInitialized = false;
+
+    setTimeout(() => {
+      if (typeof window.initializeThemeScripts === 'function') {
+        window.initializeThemeScripts();
+      }
+    }, 0);
+  }, [location.pathname]);
+
   return (
     <div className="App">
       <Header />
@@ -22,6 +36,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/product-details" element={<ProductDetails />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
