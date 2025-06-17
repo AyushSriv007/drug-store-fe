@@ -8,10 +8,11 @@ import Error from './components/error/Error';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import HomePage from './components/HomePage';
-import Shop from './components/shop/Shop';
+//import Shop from './components/shop/Shop';
 import ProductDetails from './components/shop/product-details/ProductDetails';
 import { useEffect } from 'react';
 import Login from './pages/LoginPage';
+import Shop from './features/products/shop/Shop';
 
 function App() {
   const location = useLocation();

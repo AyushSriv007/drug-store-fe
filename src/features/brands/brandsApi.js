@@ -6,7 +6,7 @@ export const brandsApi = createApi({
   baseQuery: fetchBaseQueryPublic,
   endpoints: (builder) => ({
     getBrands: builder.query({
-      query: () => 'get_brands',
+      query: () => 'master/get_brands',
     }),
   }),
 });
