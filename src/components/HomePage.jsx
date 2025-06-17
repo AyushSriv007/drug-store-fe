@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ShopByCategorySection from './ShopByCategorySection';
+//import ShopByCategorySection from './ShopByCategorySection';
 import ImageWithTextSection from './ImageWithTextSection';
 import TrendingProductSection from './TrendingProductSection';
 import VideoBannerSection from './VideoBannerSection';
@@ -11,6 +11,8 @@ import SkinAdviceSection from './SkinAdviceSection';
 import BannerSection from './BannerSection';
 import TestimonialSection from './TestimonialSection';
 import FeatureSection from './FeatureSection';
+import RoutineSection from './routine-steps/RoutineSteps';
+import ShopByCategorySection from '../features/categories/ShopByCategorySection';
 const HomePage = () => {
   return (
     <main className="main__content_wrapper">
@@ -106,6 +108,7 @@ const HomePage = () => {
         <div className="slider__pagination swiper-pagination"></div>
       </div>
     </section>
+    <RoutineSection />
     <ShopByCategorySection />
     <ImageWithTextSection />
     <TrendingProductSection />

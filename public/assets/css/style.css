@@ -14175,3 +14175,14 @@ input[type=range]::-moz-range-track {
         margin-bottom: 2.5rem
     }
 }
+
+.otp-container > div {
+    display: flex;
+    width: 100%;
+    place-content: center;
+}
+
+.otp-container > div > div > input {
+    width: 3em !important;
+    margin: 2px !important;
+}

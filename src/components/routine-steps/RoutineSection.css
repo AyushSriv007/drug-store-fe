@@ -1,0 +1,73 @@
+.routine-section-container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.routine-headline {
+  font-size: 2rem;
+  color: #0e2a53;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.routine-steps-images-container {
+  margin: 20px auto;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.step-bottles-container {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  fill: #84b6d4;
+  transition: fill 0.3s ease;
+  cursor: pointer;
+}
+
+.routine-steps-links-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.routine-step-link {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0e2a53;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.routine-step-link:hover {
+  color: #ec138d;
+}
+
+.step-bottles-container .st0 {
+  transition: fill 0.3s ease;
+}
+
+/* Highlight first 5 bottles on hover */
+.routine-section-container.hover-5 .step-bottle-1-color .st0,
+.routine-section-container.hover-5 .step-bottle-2-color .st0,
+.routine-section-container.hover-5 .step-bottle-3-color .st0,
+.routine-section-container.hover-5 .step-bottle-4-color .st0,
+.routine-section-container.hover-5 .step-bottle-5-color .st0 {
+  fill: #ec138d;
+}
+
+/* Highlight all 10 bottles on hover */
+.routine-section-container.hover-10 .step-bottle-1-color .st0,
+.routine-section-container.hover-10 .step-bottle-2-color .st0,
+.routine-section-container.hover-10 .step-bottle-3-color .st0,
+.routine-section-container.hover-10 .step-bottle-4-color .st0,
+.routine-section-container.hover-10 .step-bottle-5-color .st0,
+.routine-section-container.hover-10 .step-bottle-6-color .st0,
+.routine-section-container.hover-10 .step-bottle-7-color .st0,
+.routine-section-container.hover-10 .step-bottle-8-color .st0,
+.routine-section-container.hover-10 .step-bottle-9-color .st0,
+.routine-section-container.hover-10 .step-bottle-10-color .st0 {
+  fill: #ec138d;
+}

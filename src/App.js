@@ -1,6 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import About from './components/about/About';
-import Login from './components/auth/login/Login';
+// import Login from './components/auth/login/Login';
 import Cart from './components/cart/Cart';
 import Checkout from './components/checkout/Checkout';
 import Contact from './components/contact/Contact';
@@ -11,6 +11,7 @@ import HomePage from './components/HomePage';
 import Shop from './components/shop/Shop';
 import ProductDetails from './components/shop/product-details/ProductDetails';
 import { useEffect } from 'react';
+import Login from './pages/LoginPage';
 
 function App() {
   const location = useLocation();
