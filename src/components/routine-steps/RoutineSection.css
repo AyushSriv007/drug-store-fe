@@ -1,73 +1,130 @@
 .routine-section-container {
   text-align: center;
-  padding: 40px 20px;
+  padding: 60px 20px;
+  position: relative;
+  background: linear-gradient(to bottom, #f9f9fb 0%, #ffffff 100%);
 }
 
 .routine-headline {
-  font-size: 2rem;
-  color: #0e2a53;
-  font-weight: 500;
-  margin-bottom: 30px;
+  font-size: 2.2rem;
+  color: #002E6D;
+  font-weight: 600;
+  margin-bottom: 40px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .routine-steps-images-container {
-  margin: 20px auto;
-  max-width: 100%;
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-.step-bottles-container {
-  max-width: 800px;
-  width: 100%;
-  height: auto;
-  fill: #84b6d4;
-  transition: fill 0.3s ease;
+.bottles-hover-area {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
   cursor: pointer;
+  z-index: 2;
+}
+
+.bottles-hover-area.right {
+  right: 0;
+}
+
+.bottles-hover-area:not(.right) {
+  left: 0;
 }
 
 .routine-steps-links-container {
-  margin-top: 20px;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 50px;
 }
 
 .routine-step-link {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  color: #0e2a53;
-  text-decoration: underline;
-  transition: color 0.3s ease;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  font-family: 'Poppins', sans-serif;
 }
 
-.routine-step-link:hover {
-  color: #ec138d;
+.routine-steps-links-container .primary__btn:hover {
+      background: #a1d1ef !important;
+      color: #002E6D !important;
 }
 
-.step-bottles-container .st0 {
-  transition: fill 0.3s ease;
+.step-bottle-1-color .st0,
+.step-bottle-2-color .st0,
+.step-bottle-3-color .st0,
+.step-bottle-4-color .st0,
+.step-bottle-5-color .st0,
+.step-bottle-6-color .st0,
+.step-bottle-7-color .st0,
+.step-bottle-8-color .st0,
+.step-bottle-9-color .st0,
+.step-bottle-10-color .st0 {
+  fill: #e3eaf5;
+  transition: fill 0.2s ease-in-out;
+  stroke: #002E6D;
+  stroke-width: 0.5;
+  filter: drop-shadow(0 1px 3px rgba(0, 46, 109, 0.1));
+  border-radius: 6px;
 }
 
-/* Highlight first 5 bottles on hover */
-.routine-section-container.hover-5 .step-bottle-1-color .st0,
-.routine-section-container.hover-5 .step-bottle-2-color .st0,
-.routine-section-container.hover-5 .step-bottle-3-color .st0,
-.routine-section-container.hover-5 .step-bottle-4-color .st0,
-.routine-section-container.hover-5 .step-bottle-5-color .st0 {
-  fill: #ec138d;
+.step-bottle-1-color .st1,
+.step-bottle-2-color .st1,
+.step-bottle-3-color .st1,
+.step-bottle-4-color .st1,
+.step-bottle-5-color .st1,
+.step-bottle-6-color .st1,
+.step-bottle-7-color .st1,
+.step-bottle-8-color .st1,
+.step-bottle-9-color .st1,
+.step-bottle-10-color .st1 {
+  fill: #f2f4f8;
+  transition: fill 0.2s ease-in-out;
 }
 
-/* Highlight all 10 bottles on hover */
-.routine-section-container.hover-10 .step-bottle-1-color .st0,
-.routine-section-container.hover-10 .step-bottle-2-color .st0,
-.routine-section-container.hover-10 .step-bottle-3-color .st0,
-.routine-section-container.hover-10 .step-bottle-4-color .st0,
-.routine-section-container.hover-10 .step-bottle-5-color .st0,
-.routine-section-container.hover-10 .step-bottle-6-color .st0,
-.routine-section-container.hover-10 .step-bottle-7-color .st0,
-.routine-section-container.hover-10 .step-bottle-8-color .st0,
-.routine-section-container.hover-10 .step-bottle-9-color .st0,
-.routine-section-container.hover-10 .step-bottle-10-color .st0 {
-  fill: #ec138d;
+.hover-5 .step-bottle-1-color .st0,
+.hover-5 .step-bottle-2-color .st0,
+.hover-5 .step-bottle-3-color .st0,
+.hover-5 .step-bottle-4-color .st0,
+.hover-5 .step-bottle-5-color .st0,
+.hover-5 .step-bottle-1-color .st1,
+.hover-5 .step-bottle-2-color .st1,
+.hover-5 .step-bottle-3-color .st1,
+.hover-5 .step-bottle-4-color .st1,
+.hover-5 .step-bottle-5-color .st1 {
+  fill: #a1d1ef !important;
+}
+
+
+.hover-10 .step-bottle-1-color .st0,
+.hover-10 .step-bottle-2-color .st0,
+.hover-10 .step-bottle-3-color .st0,
+.hover-10 .step-bottle-4-color .st0,
+.hover-10 .step-bottle-5-color .st0,
+.hover-10 .step-bottle-6-color .st0,
+.hover-10 .step-bottle-7-color .st0,
+.hover-10 .step-bottle-8-color .st0,
+.hover-10 .step-bottle-9-color .st0,
+.hover-10 .step-bottle-10-color .st0,
+.hover-10 .step-bottle-1-color .st1,
+.hover-10 .step-bottle-2-color .st1,
+.hover-10 .step-bottle-3-color .st1,
+.hover-10 .step-bottle-4-color .st1,
+.hover-10 .step-bottle-5-color .st1,
+.hover-10 .step-bottle-6-color .st1,
+.hover-10 .step-bottle-7-color .st1,
+.hover-10 .step-bottle-8-color .st1,
+.hover-10 .step-bottle-9-color .st1,
+.hover-10 .step-bottle-10-color .st1 {
+  fill: #80bde3 !important;
 }
