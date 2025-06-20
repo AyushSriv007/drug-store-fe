@@ -7,7 +7,7 @@ export const subCategoriesApi = createApi({
   endpoints: (builder) => ({
     getSubCategories: builder.query({
       query: (categoryId) => ({
-        url: 'get_sub_categories',
+        url: 'master/get_sub_categories',
         params: { category_id: categoryId },
       }),
     }),

@@ -54,18 +54,8 @@ const Header = () => {
                     </ul>
                   </li>
 
-                  <li className="header__menu--items mega__menu--items">
-                    <Link className="header__menu--link" to="/shop">
-                      Shop
-                      <svg className="menu__arrowdown--icon" xmlns="http://www.w3.org/2000/svg" width="12" height="7.41" viewBox="0 0 12 7.41">
-                        <path d="M16.59,8.59,12,13.17,7.41,8.59,6,10l6,6,6-6Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7" />
-                      </svg>
-                    </Link>
-                    <div className="header__mega--menu__wrapper">
-                      <ul className="header__mega--menu d-flex">
-                        <li className="header__sub--menu__items"><Link className="header__sub--menu__link" to="/index-3">Shop 1</Link></li>
-                      </ul>
-                    </div>
+                 <li className="header__menu--items">
+                    <Link className="header__menu--link" to="/shop">Shop</Link>
                   </li>
 
                   <li className="header__menu--items">

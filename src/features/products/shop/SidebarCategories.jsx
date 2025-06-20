@@ -1,8 +1,42 @@
+import { useEffect, useState } from 'react';
 import { useGetBrandsQuery } from '../../brands/brandsApi';
+import { useGetCategoriesQuery } from '../../categories/categoriesApi';
+import { fetchBaseQueryPublic } from '../../../services/fetchBaseQueryPublic';
 
 const SidebarCategories = () => {
   const { data, isLoading } = useGetBrandsQuery();
+  const { data: categoryRes } = useGetCategoriesQuery();
+  const [subCategoryMap, setSubCategoryMap] = useState({});
+  const categories = categoryRes?.data || [];
   const brands = data?.data || [];
+
+  useEffect(() => {
+    const fetchSubCategories = async () => {
+      const query = fetchBaseQueryPublic;
+      const map = {};
+
+      await Promise.all(
+        categories.map(async (cat) => {
+          const result = await query(
+            {
+              url: 'master/get_sub_categories',
+              params: { category_id: cat.id },
+            },
+            {},
+            {}
+          );
+          map[cat.id] = result?.data?.data || [];
+        })
+      );
+
+      setSubCategoryMap(map);
+    };
+
+    if (categories.length > 0) fetchSubCategories();
+  }, [categories]);
+
+  if (isLoading) return <div>Loading Categories...</div>;
+
   return (
     <div className="col-xl-3 col-lg-4 shop-col-width-lg-4">
       <div className="shop__sidebar--widget widget__area d-none d-lg-block">
@@ -11,33 +45,30 @@ const SidebarCategories = () => {
         <div className="single__widget widget__bg">
           <h2 className="widget__title h3">Categories</h2>
           <ul className="widget__categories--menu">
-            {[1, 2, 3, 4, 5].map((index) => (
-              <li key={index} className="widget__categories--menu__list">
+            {categories.map((cat) => (
+              <li key={cat.id} className="widget__categories--menu__list">
                 <label className="widget__categories--menu__label d-flex align-items-center">
                   <img
                     className="widget__categories--menu__img"
-                    src={`assets/img/product/small-product/product${index}.webp`}
-                    alt="categories-img"
+                    src={cat.icon_image_url}
+                    alt={`${cat.name}-img`}
                   />
-                  <span className="widget__categories--menu__text">
-                    {['Fairness cream', 'Skin Silver', 'Night Serum', 'Cream Oil', 'Skin Cleaner'][index - 1]}
-                  </span>
+                  <span className="widget__categories--menu__text">{cat.name}</span>
                   <svg className="widget__categories--menu__arrowdown--icon" xmlns="http://www.w3.org/2000/svg" width="12.355" height="8.394">
-                    <path d="M15.138,8.59l-3.961,3.952L7.217,8.59,6,9.807l5.178,5.178,5.178-5.178Z" transform="translate(-6 -8.59)" fill="currentColor"></path>
+                    <path d="M15.138,8.59l-3.961,3.952L7.217,8.59,6,9.807l5.178,5.178,5.178-5.178Z" transform="translate(-6 -8.59)" fill="currentColor" />
                   </svg>
                 </label>
+
                 <ul className="widget__categories--sub__menu">
-                  {[2, 3, 4, 5].map((subIndex) => (
-                    <li key={subIndex} className="widget__categories--sub__menu--list">
-                      <a className="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
+                  {(subCategoryMap[cat.id] || []).map((sub) => (
+                    <li key={sub.id} className="widget__categories--sub__menu--list">
+                      <a className="widget__categories--sub__menu--link d-flex align-items-center" href={`/shop?sub_category=${sub.id}`}>
                         <img
                           className="widget__categories--sub__menu--img"
-                          src={`assets/img/product/small-product/product${subIndex}.webp`}
-                          alt="categories-img"
+                          src={sub.icon_image_url}
+                          alt={`${sub.name}-img`}
                         />
-                        <span className="widget__categories--sub__menu--text">
-                          {['Massage Cream', 'Matte Walnut', 'Bamboo Scrub', 'Castor Oil'][subIndex - 2]}
-                        </span>
+                        <span className="widget__categories--sub__menu--text">{sub.name}</span>
                       </a>
                     </li>
                   ))}
