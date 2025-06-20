@@ -25,4 +25,5 @@ export const productsApi = createApi({
 export const {
     useGetProductsQuery,
     useGetTrendingProductsQuery,
+    useGetProductDetailsQuery
 } = productsApi;

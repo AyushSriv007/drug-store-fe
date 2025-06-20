@@ -1,10 +1,15 @@
 import { Link } from 'react-router-dom';
 import { useGetCategoriesQuery } from './categoriesApi';
+import Preloader from '../../components/Preloader';
 
 const ShopByCategorySection = () => {
   const { data, isLoading, isError } = useGetCategoriesQuery();
 
-  if (isLoading) return null;
+   if (isLoading) {
+    return (
+      <Preloader />
+    );
+  }
   if (isError) return <p>Failed to load categories</p>;
 
   const categories = data?.data || [];

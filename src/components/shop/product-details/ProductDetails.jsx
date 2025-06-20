@@ -3,7 +3,7 @@ import BreadcrumbSection from './BreadcrumbSection';
 import FeatureSection from '../../FeatureSection';
 
 
-const ProductDetails = () => {
+const ProductDetails2 = () => {
     return (
         <main className="main__content_wrapper">
             <BreadcrumbSection />
@@ -626,4 +626,4 @@ const ProductDetails = () => {
     );
 };
 
-export default ProductDetails;
+export default ProductDetails2;

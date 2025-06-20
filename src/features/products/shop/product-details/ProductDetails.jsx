@@ -1,13 +1,29 @@
-import React from 'react';
-import BreadcrumbSection from './BreadcrumbSection';
-import FeatureSection from '../../FeatureSection';
+import { useParams } from 'react-router-dom';
+import BreadcrumbSection from '../../../../components/common/breadcrumb/BreadcrumbSection';
+import { useGetProductDetailsQuery } from '../../productsApi';
+import Preloader from '../../../../components/Preloader';
+import FeatureSection from '../../../../components/FeatureSection';
 
 
 const ProductDetails = () => {
+
+    const { id } = useParams();
+    const { data, isLoading, isError } = useGetProductDetailsQuery(id);
+    const product = data?.data;
+
+    if (isLoading) return <Preloader />;
+    if (isError || !product) return <div>Something went wrong...</div>;
+
+
     return (
         <main className="main__content_wrapper">
-            <BreadcrumbSection />
-            <section className="product__details--section section--padding">
+            <BreadcrumbSection
+                items={[
+                    { label: 'Home', path: '/' },
+                    { label: 'Product Details' }
+                ]}
+            />
+            {/* <section className="product__details--section section--padding">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 col-md-6">
@@ -620,7 +636,7 @@ const ProductDetails = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
             <FeatureSection />
         </main>
     );

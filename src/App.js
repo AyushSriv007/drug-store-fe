@@ -9,10 +9,12 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import HomePage from './components/HomePage';
 //import Shop from './components/shop/Shop';
-import ProductDetails from './components/shop/product-details/ProductDetails';
 import { useEffect } from 'react';
 import Login from './pages/LoginPage';
 import Shop from './features/products/shop/Shop';
+import Login2 from './pages/login/Login';
+import ProductDetails from './features/products/shop/product-details/ProductDetails';
+import ProductDetails2 from './components/shop/product-details/ProductDetails';
 
 function App() {
   const location = useLocation();
@@ -24,7 +26,7 @@ function App() {
       if (typeof window.initializeThemeScripts === 'function') {
         window.initializeThemeScripts();
       }
-    }, 0);
+    }, 800);
   }, [location.pathname]);
 
   return (
@@ -38,7 +40,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/product-details" element={<ProductDetails />} />
+        <Route path="/product-details/:id" element={<ProductDetails />} />
+        <Route path="/product-details" element={<ProductDetails2 />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />

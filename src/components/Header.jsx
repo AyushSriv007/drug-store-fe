@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { auth } from '../firebase/firebaseConfig';
 
 const Header = () => {
+  const user = auth.currentUser;
   return (
     <header className="header__section">
       <div className="header__topbar bg__primary">
@@ -26,7 +28,7 @@ const Header = () => {
             <div className="main__logo">
               <h1 className="main__logo--title">
                 <Link className="main__logo--link" to="/">
-                  <img className="main__logo--img" src="/assets/img/logo/logo.png" alt="logo-img" />
+                  <img className="main__logo--img" src="/assets/img/logo/nav-logo.png" alt="logo-img" />
                 </Link>
               </h1>
             </div>
@@ -121,14 +123,14 @@ const Header = () => {
                 </li>
 
                 <li className="header__account--items">
-                  <Link className="header__account--btn d-sm-2-none" to="/my-account">
+                  <Link className="header__account--btn d-sm-2-none" to={user ? "/my-account" : "/login"}>
                     <span className="header__account--btn__icon">
                       <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16 16V14.3333C16 13.4493 15.6049 12.6014 14.9016 11.9763C14.1984 11.3512 13.2446 11 12.25 11H4.75C3.75544 11 2.80161 11.3512 2.09835 11.9763C1.39509 12.6014 1 13.4493 1 14.3333V16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M8.5 7.66667C10.5711 7.66667 12.25 6.17428 12.25 4.33333C12.25 2.49238 10.5711 1 8.5 1C6.42893 1 4.75 2.49238 4.75 4.33333C4.75 6.17428 6.42893 7.66667 8.5 7.66667Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </span>
-                    <span className="visually-hidden">My Account</span>
+                    <span className="visually-hidden">{user ? "My Account" : "Login"}</span>
                   </Link>
                 </li>
 
@@ -152,7 +154,7 @@ const Header = () => {
             <div class="offcanvas__inner">
                 <div class="offcanvas__logo">
                     <Link class="offcanvas__logo_link" to="/">
-                        <img class="main__logo--img" src="assets/img/logo/logo.png" alt="Logo-img" />
+                        <img class="main__logo--img" src="assets/img/logo/nav-logo.png" alt="Logo-img" />
                     </Link>
                     <button class="offcanvas__close--btn" data-offcanvas>close</button>
                 </div>

@@ -1,5 +1,5 @@
-import { fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { auth } from '../firebase/firebaseConfig';
+import { fetchBaseQuery } from "@reduxjs/toolkit/query";
+import { auth } from "../firebase/firebaseConfig";
 
 export const fetchBaseQueryWithToken = fetchBaseQuery({
   baseUrl: process.env.REACT_APP_API_BASE_URL,

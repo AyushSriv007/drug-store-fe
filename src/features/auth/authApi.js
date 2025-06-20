@@ -1,9 +1,10 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import { fetchBaseQueryWithToken } from '../../services/fetchBaseQueryWithToken';
+import { fetchBaseQueryPublic } from '../../services/fetchBaseQueryPublic';
 
 export const authApi = createApi({
     reducerPath: 'authApi',
-    baseQuery: fetchBaseQueryWithToken,
+    baseQuery: fetchBaseQueryPublic,
     endpoints: (builder) => ({
         loginUser: builder.mutation({
             query: ({ phone, country_code }) => {
