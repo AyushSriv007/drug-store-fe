@@ -1,16 +1,21 @@
 import { Link } from 'react-router-dom';
 import { useGetCategoriesQuery } from './categoriesApi';
 import Preloader from '../../components/Preloader';
+import { useEffect } from 'react';
 
 const ShopByCategorySection = () => {
   const { data, isLoading, isError } = useGetCategoriesQuery();
 
-   if (isLoading) {
-    return (
-      <Preloader />
-    );
-  }
-  if (isError) return <p>Failed to load categories</p>;
+  //  if (isLoading) {
+  //   return (
+  //     <Preloader />
+  //   );
+  // }
+  // if (isError) return <p>Failed to load categories</p>;
+
+    // useEffect(() => {        
+    //       window.initializeThemeScripts();
+    // }, []);
 
   const categories = data?.data || [];
 

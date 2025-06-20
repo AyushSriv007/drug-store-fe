@@ -3,7 +3,7 @@
 "use strict";
 window.initializeThemeScripts = function () {
   if (window.__themeInitialized) return;
-  window.__themeInitialized = true;
+  
   /*
     Before After activation
   */
@@ -1014,5 +1014,5 @@ window.initializeThemeScripts = function () {
     }
   };
   newsletterPopup();
-
+  window.__themeInitialized = true;
 };

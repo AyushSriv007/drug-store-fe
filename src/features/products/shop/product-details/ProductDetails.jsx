@@ -3,26 +3,31 @@ import BreadcrumbSection from '../../../../components/common/breadcrumb/Breadcru
 import { useGetProductDetailsQuery } from '../../productsApi';
 import Preloader from '../../../../components/Preloader';
 import FeatureSection from '../../../../components/FeatureSection';
+import { useEffect } from 'react';
 
 
 const ProductDetails = () => {
 
     const { id } = useParams();
-    const { data, isLoading, isError } = useGetProductDetailsQuery(id);
-    const product = data?.data;
+    // const { data, isLoading, isError } = useGetProductDetailsQuery(id);
+    // const product = data?.data;
 
-    if (isLoading) return <Preloader />;
-    if (isError || !product) return <div>Something went wrong...</div>;
+    // if (isLoading) return <Preloader />;
+    // if (isError || !product) return <div>Something went wrong...</div>;
+
+     useEffect(() => {        
+              window.initializeThemeScripts();
+        }, [id]);
 
 
     return (
         <main className="main__content_wrapper">
-            <BreadcrumbSection
+            {/* <BreadcrumbSection
                 items={[
                     { label: 'Home', path: '/' },
                     { label: 'Product Details' }
                 ]}
-            />
+            /> */}
             {/* <section className="product__details--section section--padding">
                 <div className="container">
                     <div className="row">
@@ -637,7 +642,7 @@ const ProductDetails = () => {
                     </div>
                 </div>
             </section> */}
-            <FeatureSection />
+            {/* <FeatureSection /> */}
         </main>
     );
 };

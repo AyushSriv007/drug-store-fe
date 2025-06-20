@@ -17,17 +17,21 @@ import ProductDetails from './features/products/shop/product-details/ProductDeta
 import ProductDetails2 from './components/shop/product-details/ProductDetails';
 
 function App() {
-  const location = useLocation();
+  // const location = useLocation();
 
-  useEffect(() => {
-    window.__themeInitialized = false;
+  // useEffect(() => {
+  //   window.__themeInitialized = false;
 
-    setTimeout(() => {
-      if (typeof window.initializeThemeScripts === 'function') {
-        window.initializeThemeScripts();
-      }
-    }, 800);
-  }, [location.pathname]);
+  //   setTimeout(() => {
+  //     if (typeof window.initializeThemeScripts === 'function') {
+  //       window.initializeThemeScripts();
+  //     }
+  //   }, 0);
+  // }, [location.pathname]);
+
+  // useEffect(() => {
+  //   window.initializeThemeScripts();
+  // }, []);
 
   return (
     <div className="App">
