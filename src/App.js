@@ -26,7 +26,7 @@ function App() {
       if (typeof window.initializeThemeScripts === 'function') {
         window.initializeThemeScripts();
       }
-    }, 800);
+    }, 1000);
   }, [location.pathname]);
 
   return (

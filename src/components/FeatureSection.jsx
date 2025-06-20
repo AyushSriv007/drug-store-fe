@@ -7,7 +7,7 @@ const FeatureSection = () => {
         <div className="feature__inner d-flex justify-content-between">
           <div className="feature__items d-flex align-items-center">
             <div className="feature__icon">
-              <img src="assets/img/other/feature1.webp" alt="img" />
+              <img src="/assets/img/other/feature1.webp" alt="img" />
             </div>
             <div className="feature__content">
               <h2 className="feature__content--title h3">Free Shipping</h2>
@@ -16,7 +16,7 @@ const FeatureSection = () => {
           </div>
           <div className="feature__items d-flex align-items-center">
             <div className="feature__icon">
-              <img src="assets/img/other/feature2.webp" alt="img" />
+              <img src="/assets/img/other/feature2.webp" alt="img" />
             </div>
             <div className="feature__content">
               <h2 className="feature__content--title h3">Support 24/7</h2>
@@ -25,7 +25,7 @@ const FeatureSection = () => {
           </div>
           <div className="feature__items d-flex align-items-center">
             <div className="feature__icon">
-              <img src="assets/img/other/feature3.webp" alt="img" />
+              <img src="/assets/img/other/feature3.webp" alt="img" />
             </div>
             <div className="feature__content">
               <h2 className="feature__content--title h3">100% Money Back</h2>
@@ -34,7 +34,7 @@ const FeatureSection = () => {
           </div>
           <div className="feature__items d-flex align-items-center">
             <div className="feature__icon">
-              <img src="assets/img/other/feature4.webp" alt="img" />
+              <img src="/assets/img/other/feature4.webp" alt="img" />
             </div>
             <div className="feature__content">
               <h2 className="feature__content--title h3">Payment Secure</h2>
