@@ -30,29 +30,29 @@ const ProductDetails = () => {
                                 <div className="single__product--preview bg__gray  swiper mb-18">
                                     <div className="swiper-wrapper">
                                         {product.image_list?.map((img, idx) => (
-                                        <div className="swiper-slide"key={img.id} >
-                                            <div className="product__media--preview__items">
-                                                <Link className="product__media--preview__items--link glightbox" data-gallery="product-media-preview" to={img.image_url}><img className="product__media--preview__items--img" src={img.image_url} alt={`product-media-img-${idx}`} /></Link>
-                                                <div className="product__media--view__icon">
-                                                    <Link className="product__media--view__icon--link glightbox" to={img.image_url} data-gallery="product-media-preview">
-                                                        <svg className="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="22.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
-                                                        <span className="visually-hidden">product view</span>
-                                                    </Link>
-                                                </div>
+                                            <div className="swiper-slide" key={img.id} >
+                                                <div className="product__media--preview__items">
+                                                    <Link className="product__media--preview__items--link glightbox" data-gallery="product-media-preview" to={img.image_url}><img className="product__media--preview__items--img" src={img.image_url} alt={`product-media-img-${idx}`} /></Link>
+                                                    <div className="product__media--view__icon">
+                                                        <Link className="product__media--view__icon--link glightbox" to={img.image_url} data-gallery="product-media-preview">
+                                                            <svg className="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="22.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
+                                                            <span className="visually-hidden">product view</span>
+                                                        </Link>
+                                                    </div>
 
+                                                </div>
                                             </div>
-                                        </div>
                                         ))}
                                     </div>
                                 </div>
                                 <div className="single__product--nav swiper">
                                     <div className="swiper-wrapper">
                                         {product.image_list?.map((img, idx) => (
-                                        <div className="swiper-slide">
-                                            <div className="product__media--nav__items">
-                                                <img className="product__media--nav__items--img" src={img.image_url} alt={`product-nav-img-${idx}`} />
+                                            <div className="swiper-slide">
+                                                <div className="product__media--nav__items">
+                                                    <img className="product__media--nav__items--img" src={img.image_url} alt={`product-nav-img-${idx}`} />
+                                                </div>
                                             </div>
-                                        </div>
                                         ))}
                                     </div>
                                     <div className="swiper__nav--btn swiper-button-next">
@@ -118,22 +118,22 @@ const ProductDetails = () => {
                                             <fieldset className="variant__input--fieldset">
                                                 <legend className="product__variant--title mb-8">Color :</legend>
                                                 <div className="variant__color d-flex">
-                                                    <div className="variant__color--list">
-                                                        <input id="color-red5" name="color" type="radio" checked />
-                                                        <label className="variant__color--value red" for="color-red5" title="Red"><img className="variant__color--value__img" src="/assets/img/product/small-product/product1.webp" alt="variant-color-img" /></label>
-                                                    </div>
-                                                    <div className="variant__color--list">
-                                                        <input id="color-red6" name="color" type="radio" />
-                                                        <label className="variant__color--value red" for="color-red6" title="Black"><img className="variant__color--value__img" src="/assets/img/product/small-product/product2.webp" alt="variant-color-img" /></label>
-                                                    </div>
-                                                    <div className="variant__color--list">
-                                                        <input id="color-red7" name="color" type="radio" />
-                                                        <label className="variant__color--value red" for="color-red7" title="Pink"><img className="variant__color--value__img" src="/assets/img/product/small-product/product3.webp" alt="variant-color-img" /></label>
-                                                    </div>
-                                                    <div className="variant__color--list">
-                                                        <input id="color-red8" name="color" type="radio" />
-                                                        <label className="variant__color--value red" for="color-red8" title="Orange"><img className="variant__color--value__img" src="/assets/img/product/small-product/product4.webp" alt="variant-color-img" /></label>
-                                                    </div>
+                                                    {product.color_list?.map((colorCode, idx) => (
+                                                        <div className="variant__color--list" key={colorCode}>
+                                                            <input id={`color-${idx}`} name="color" type="radio" defaultChecked={idx === 0} />
+                                                            <label className="variant__color--value red" htmlFor={`color-${idx}`} title={colorCode}>
+                                                                <span
+                                                                    className="variant__color--value__img"
+                                                                    style={{
+                                                                        backgroundColor: colorCode,
+                                                                        display: 'inline-block',
+                                                                        width: '100%',
+                                                                        height: '100%',
+                                                                    }}
+                                                                ></span>
+                                                            </label>
+                                                        </div>
+                                                    ))}
                                                 </div>
                                             </fieldset>
                                         </div>
